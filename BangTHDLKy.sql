@@ -25,6 +25,7 @@ primary key (semestercode)
 create table mark(
 code varchar(20) NOT NULL,
 studentcode varchar(20) NOT NULL,
+semestercode varchar(20) NOT NULL,
 coursecode varchar(20) NOT NULL,
 attendancepoint varchar(20) NOT NULL,
 midtermpoint varchar(20) NOT NULL,
@@ -33,9 +34,12 @@ tenpoint float NOT NULL,
 fourpoint float NOT NULL,
 wordpoint varchar(10) NOT NULL,
 average float NOT NULL,
+numbered varchar(10) NOT NULL,
+dateupdate datetime NOT NULL,
 primary key (code),
 foreign key (studentcode) references student(studentcode),
-foreign key (coursecode) references courseclass(coursecode)
+foreign key (coursecode) references courseclass(coursecode),
+foreign key (semestercode) references semester(semestercode)
 )
 
 ------------Du lieu bang Hoc Ky--------------
